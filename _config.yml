@@ -18,25 +18,21 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Sherriff Kadiri
+title: "Sherriff Kadiri"
+name: "Sherriff Kadiri"
 email: sherriff.kadiri@outlook.com
 description: "AI & Full Stack Developer | MS CS Candidate, CU Boulder"
 baseurl: ""
 url: "https://KingSherriff.github.io"
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes@4.27.3"
-minimal_mistakes_skin: "default" 
-
-plugins:
-  - jekyll-include-cache
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: "dark" 
 
 author:
   name: "Sherriff Kadiri"
   bio: "AI & Full Stack Developer building intelligent experiences. MS CS at CU Boulder."
+  location: "Edmonton, AB"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -44,7 +40,10 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/sherriff-kadiri"
-  
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:sherriff.kadiri@outlook.com"
+
 collections:
   portfolio:
     output: true
@@ -52,18 +51,41 @@ collections:
 
 defaults:
   - scope:
-    path: ""
-    type: posts
-  values:
-    layout: single
-    author_profile: true
-    read_time: true
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: true
   - scope:
-    path: portfolio
-  values:
-    layout: single
-    author_profile: true
-    read_time: true
+      path: "_pages"
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+
+# Plugins
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-include-cache
+
+# Reading Files
+include:
+  - _pages
+
+# Exclude from builds
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.
